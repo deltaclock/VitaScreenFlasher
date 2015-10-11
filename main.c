@@ -5,9 +5,12 @@
 #define EXIT_COMBO (PSP2_CTRL_START | PSP2_CTRL_SELECT)
 
 #define RED     RGBA8(255,   0,   0, 255)
-#define GREEN   RGBA8(  0, 255,   0, 255)
-#define BLUE    RGBA8(  0,   0, 255, 255)
+#define ORANGE  RGBA8(255, 165,   0, 255)
 #define YELLOW  RGBA8(255, 255,   0, 255)
+#define GREEN   RGBA8(  0, 255,   0, 255)
+#define CYAN    RGBA8(  0, 255, 255, 255)
+#define BLUE    RGBA8(  0,   0, 255, 255)
+#define PURPLE  RGBA8(128,   0, 128, 255)
 
 extern unsigned char warning_image[];
 
@@ -41,7 +44,25 @@ int main()
 
         vita2d_start_drawing();
         vita2d_clear_screen();
+        vita2d_draw_rectangle(0, 0, 960, 544, ORANGE);
+        vita2d_end_drawing();
+        vita2d_swap_buffers();
+
+        vita2d_start_drawing();
+        vita2d_clear_screen();
+        vita2d_draw_rectangle(0, 0, 960, 544, YELLOW);
+        vita2d_end_drawing();
+        vita2d_swap_buffers();
+
+        vita2d_start_drawing();
+        vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, GREEN);
+        vita2d_end_drawing();
+        vita2d_swap_buffers();
+
+        vita2d_start_drawing();
+        vita2d_clear_screen();
+        vita2d_draw_rectangle(0, 0, 960, 544, CYAN);
         vita2d_end_drawing();
         vita2d_swap_buffers();
 
@@ -53,7 +74,7 @@ int main()
 
         vita2d_start_drawing();
         vita2d_clear_screen();
-        vita2d_draw_rectangle(0, 0, 960, 544, YELLOW);
+        vita2d_draw_rectangle(0, 0, 960, 544, PURPLE);
         vita2d_end_drawing();
         vita2d_swap_buffers();
     }
