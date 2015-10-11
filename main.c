@@ -9,9 +9,20 @@
 #define BLUE    RGBA8(  0,   0, 255, 255)
 #define YELLOW  RGBA8(255, 255,   0, 255)
 
+extern unsigned char warning_image[];
+
 int main()
 {
     vita2d_init();
+
+    vita2d_start_drawing();
+    vita2d_clear_screen();
+    vita2d_texture *warning = vita2d_load_PNG_buffer(warning_image);
+    vita2d_draw_texture(warning, 0, 0);
+    vita2d_end_drawing();
+    vita2d_swap_buffers();
+
+    sceKernelDelayThread(10 * 1000 * 1000); // Delay 10 seconds
 
     SceCtrlData pad;
 
@@ -48,6 +59,7 @@ int main()
     }
 
     vita2d_fini();
+    vita2d_free_texture(warning);
 
     return 0;
 }

@@ -1,7 +1,7 @@
 TARGET = VitaScreenFlasher
-OBJS   = main.o
+OBJS   = main.o warning.o
 
-LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub -lSceCommonDialog_stub -lSceCtrl_stub -lm
+LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub -lSceCommonDialog_stub -lSceCtrl_stub -lpng -lz -lm
 
 PREFIX  = arm-vita-eabi
 CC      = $(PREFIX)-gcc
