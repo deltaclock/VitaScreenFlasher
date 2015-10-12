@@ -2,7 +2,7 @@
 #include <psp2/kernel/processmgr.h>
 #include <vita2d.h>
 
-#define EXIT_COMBO (PSP2_CTRL_START | PSP2_CTRL_SELECT)
+#define EXIT_COMBO (SCE_CTRL_START | SCE_CTRL_SELECT)
 
 #define RED     RGBA8(255,   0,   0, 255)
 #define ORANGE  RGBA8(255, 165,   0, 255)
