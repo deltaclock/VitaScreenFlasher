@@ -4,6 +4,7 @@
 
 #define EXIT_COMBO (SCE_CTRL_START | SCE_CTRL_SELECT)
 
+#define BLACK   RGBA8(  0,   0,   0, 255)
 #define RED     RGBA8(255,   0,   0, 255)
 #define ORANGE  RGBA8(255, 165,   0, 255)
 #define YELLOW  RGBA8(255, 255,   0, 255)
@@ -17,6 +18,7 @@ extern unsigned char warning_image[];
 int main()
 {
     vita2d_init();
+	vita2d_set_clear_color(BLACK);
 
     vita2d_start_drawing();
     vita2d_clear_screen();
@@ -30,6 +32,10 @@ int main()
     SceCtrlData pad;
 
     while(1) {
+		sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
+		sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_OFF);
+		sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_DIMMING);
+
         sceCtrlPeekBufferPositive(0, &pad, 1);
 
         if (pad.buttons == EXIT_COMBO) {
