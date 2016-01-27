@@ -32,15 +32,11 @@ int main()
     SceCtrlData pad;
 
     while(1) {
-		sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
-		sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_OFF);
-		sceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_OLED_DIMMING);
+		sceKernelPowerTick(0);
 
         sceCtrlPeekBufferPositive(0, &pad, 1);
 
-        if (pad.buttons == EXIT_COMBO) {
-            break;
-        }
+        if (pad.buttons == EXIT_COMBO) { break; }
 
         vita2d_start_drawing();
         vita2d_clear_screen();
