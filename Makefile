@@ -1,4 +1,4 @@
-TITLE_ID = SCRENFLSH
+TITLE_ID = SCRENTST
 TARGET = VitaScreenTester
 OBJS   = main.o warning.o
 
