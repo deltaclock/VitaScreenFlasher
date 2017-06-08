@@ -12,9 +12,10 @@
 #define CYAN    RGBA8(  0, 255, 255, 255)
 #define BLUE    RGBA8(  0,   0, 255, 255)
 #define PURPLE  RGBA8(128,   0, 128, 255)
+#define GREY    RGBA8(128, 128, 128, 255)
 
 extern unsigned char warning_image[];
-
+static void wait_key_press();
 int main()
 {
     vita2d_init();
@@ -37,46 +38,52 @@ int main()
         sceCtrlPeekBufferPositive(0, &pad, 1);
 
         if (pad.buttons == EXIT_COMBO) { break; }
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, RED);
         vita2d_end_drawing();
         vita2d_swap_buffers();
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, ORANGE);
         vita2d_end_drawing();
         vita2d_swap_buffers();
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, YELLOW);
         vita2d_end_drawing();
         vita2d_swap_buffers();
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, GREEN);
         vita2d_end_drawing();
         vita2d_swap_buffers();
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, CYAN);
         vita2d_end_drawing();
         vita2d_swap_buffers();
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, BLUE);
         vita2d_end_drawing();
         vita2d_swap_buffers();
-
+		wait_key_press("Cross",SCE_CTRL_CROSS)
         vita2d_start_drawing();
         vita2d_clear_screen();
         vita2d_draw_rectangle(0, 0, 960, 544, PURPLE);
+        vita2d_end_drawing();
+        vita2d_swap_buffers();
+		wait_key_press("Cross",SCE_CTRL_CROSS)
+        vita2d_start_drawing();
+        vita2d_clear_screen();
+        vita2d_draw_rectangle(0, 0, 960, 544, GREY);
         vita2d_end_drawing();
         vita2d_swap_buffers();
     }
