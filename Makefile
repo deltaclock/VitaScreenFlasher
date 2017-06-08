@@ -1,5 +1,5 @@
 TITLE_ID = SCRENFLSH
-TARGET = VitaScreenFlasher
+TARGET = VitaScreenTester
 OBJS   = main.o warning.o
 
 LIBS = -lvita2d -lSceDisplay_stub -lSceGxm_stub -lSceCommonDialog_stub -lSceCtrl_stub -lSceSysmodule_stub -lpng -lz -lm
