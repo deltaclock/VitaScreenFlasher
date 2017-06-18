@@ -20,7 +20,7 @@
 #define GREY    RGBA8(128, 128, 128, 255)
 
 static void wait_key_press();
-
+//from xerpi
 void wait_key_press(const char *key_desc, unsigned int key_mask)
 {
 	SceCtrlData pad;
